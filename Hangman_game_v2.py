@@ -1,8 +1,8 @@
 
 word_bank = {
-    1: ["cuba", "sweden", "peru", "fiji"],
-    2: ["japan", "spain", "italy", "finland"],
-    3: ["philippines", "indonesia", "netherlands", "azerbaijan"]
+    1: ["CUBA", "SWEDEN", "RUSSIA", "FIJI"],
+    2: ["ARGENTINA", "PANAMA", "URUGUAY", "FINLAND"],
+    3: ["PHILIPPINES", "TANZANIA", "NETHERLANDS", "AZERBAIJAN"]
 }
 
 import random
@@ -108,7 +108,7 @@ print(" ".join(guess_word))
 
 
 while lives > 0 and "_" in guess_word:
-    guess = input("\nGuess a letter:").lower()
+    guess = input("\nGuess a letter:").upper()
 
     if len(guess) != 1 or not guess.isalpha():
         print("Please enter only a single letter.")
