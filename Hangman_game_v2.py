@@ -27,6 +27,7 @@ while True:
 
 import random
 
+
 gen_word = random.choice(word_bank[game_difficulty])
 
 
