@@ -6,7 +6,7 @@ import random
 word_bank = {
     1: ["KENYA", "SWEDEN", "RUSSIA", "FIJI","ITALY","FRANCE","INDIA"],
     2: ["ARGENTINA", "PANAMA", "URUGUAY", "FINLAND","GERMANY","MONACO","COLOMBIA"],
-    3: ["PHILIPPINES", "TANZANIA", "NETHERLANDS","LUXEMBOURG" "AZERBAIJAN","UGANDA","MYANMAR"]
+    3: ["PHILIPPINES", "TANZANIA", "NETHERLANDS","LUXEMBOURG", "AZERBAIJAN","UGANDA","MYANMAR"]
 }
 
 
@@ -97,7 +97,10 @@ player_name = str(input("Please enter your name:"))
 #prints a statement for introduction
 print("Hello {}, welcome to Geography Hangman!".format(player_name))
 
-
+"""
+function to set up difficulty 
+choice at start of game 
+"""
 def setup():
     global game_difficulty
     #allows player to choose a difficulty level
@@ -121,13 +124,17 @@ def setup():
     guess_word = ["_"] * len(gen_word)
 
 
-#function for scoreboard with variables to update when gamecis repeated
+"""function for scoreboard with variables required
+ in final score to update when game is repeated"""
 def update_history():
     global game_history, player_name, lives, gen_word, guessed_letters, game_difficulty
     game_history.append([player_name, lives, gen_word, guessed_letters, game_difficulty])
 
 
-#function for showing score when game is ended    
+"""function for showing the final
+score when game is endedfrom the
+start of the game to the last game
+played by the same person"""   
 def show_history():
     global game_history, player_name
     print("Stats for {} :".format(player_name))
@@ -138,7 +145,7 @@ def show_history():
             print("On attempt {} you guessed {} with {} lives remaining".format(i+1, game_history[i][2], game_history[i][1]))
 
 
-#function to update scoreboard if word is guessed correct or wrong 
+#function to check if word is guessed correct or wrong"
 def check_complete():
     global lives, word_completed, gen_word
     if gen_word == "".join(guess_word):
@@ -153,7 +160,8 @@ def guess_letter(letter):
     
     guessed_letters.append(letter)
     
-    #instructs game to reduce number of lives if the letter guessed is wrong and refers to check complete function
+    """instructs game to reduce number of lives if the
+    letter guessed is wrong and refers to check complete function"""
     if letter in gen_word:
         print("Good job! '{}' is in the word.".format(letter))
         for index, true_letter in enumerate(gen_word):
@@ -173,7 +181,8 @@ def guess_letter(letter):
     print("Guessed letters:", ", ".join(guessed_letters))
 
 
-#prompts user to make a guess and prints an error statement if a single letter from the alphabet is not used        
+"""prompts user to make a guess and prints an error
+statement if a single letter from the alphabet is not used"""   
 def play():
     while not word_completed and lives > 0:
         letter = input("\nGuess a letter:").upper()
@@ -189,7 +198,7 @@ def play():
         guess_letter(letter)
 
 
-#Informs player if word is guessed correctly or incorrectly after limited number of lives
+#
     if word_completed:
         print("\nCongratulations! You win {}! It was '{}'".format(player_name, gen_word))
     else:
