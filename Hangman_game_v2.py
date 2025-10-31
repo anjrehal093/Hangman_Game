@@ -9,7 +9,7 @@ import random
 
 player_name = str(input("Please enter your name:"))
 
-print("Hello {}, welcome to this geography hangman game!".format(player_name))
+print("Hello {}, welcome to Geography Hangman!".format(player_name))
 
 print("Please choose a difficulty level.\n{} for {}\n{} for {}\n{} for {}".format(1, "Easy", 2, "Medium", 3, "Hard"))
 
