@@ -22,7 +22,7 @@ while True:
             continue
         break
     except ValueError:
-        print("That is not a valid number. Please enter 1,2 or 3")
+        print("That is not a valid number. Please enter 1,2 or 3.")
 
 
 import random
