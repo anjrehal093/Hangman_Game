@@ -16,7 +16,7 @@ print("Please choose a difficulty level.\n{} for {}\n{} for {}\n{} for {}".forma
 
 while True:
     try:
-        game_difficulty = int(input("Please enter a number for the game mode:"))
+        game_difficulty = int(input("Please enter a number for the game mode: "))
         if game_difficulty not in range (1,4):
             print("Enter a number (1, 2 or 3.")
             continue
