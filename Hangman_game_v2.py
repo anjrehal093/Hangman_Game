@@ -86,7 +86,7 @@ game_difficulty_map = {1:"Easy",2:"Medium", 3:"Hard"}
 
 player_name = str(input("Please enter your name:"))
 
-print("Hello {}, welcome to this geography hangman game!".format(player_name))
+print("Hello {}, welcome to Geography Hangman!".format(player_name))
 
 def setup():
     global game_difficulty
@@ -171,7 +171,7 @@ def play():
 
 while game_active:
     setup()
-    print("Let's begin {}. The word has {} letters.".format(player_name, len(gen_word)))
+    print("Let's begin {}. The country has {} letters.".format(player_name, len(gen_word)))
     print(" ".join(guess_word))
     play()
     
@@ -192,5 +192,6 @@ while game_active:
     else:
         game_active=False
 
+print("Thanks for playing {}! Goodbye".format(player_name))
 show_history()
 
