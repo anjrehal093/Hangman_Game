@@ -1,9 +1,9 @@
 import random
 
 word_bank = {
-    1: ["CUBA", "SWEDEN", "RUSSIA", "FIJI"],
-    2: ["ARGENTINA", "PANAMA", "URUGUAY", "FINLAND"],
-    3: ["PHILIPPINES", "TANZANIA", "NETHERLANDS", "AZERBAIJAN"]
+    1: ["KENYA", "SWEDEN", "RUSSIA", "FIJI","ITALY","FRANCE","INDIA"],
+    2: ["ARGENTINA", "PANAMA", "URUGUAY", "FINLAND","GERMANY","MONACO","COLOMBIA"],
+    3: ["PHILIPPINES", "TANZANIA", "NETHERLANDS","LUXEMBOURG" "AZERBAIJAN","UGANDA","MYANMAR"]
 }
 
 hangman_stages = [
@@ -112,12 +112,12 @@ def update_history():
     
 def show_history():
     global game_history, player_name
-    print("Stats for Player {} during this run".format(player_name))
+    print("Stats for {} :".format(player_name))
     for i in range(0,len(game_history)):
         if game_history[i][1] == 0:
-            print("on your {}th attempt you failed to guess {}".format(i+1, game_history[i][2]))
+            print("On attempt {} you failed to guess {}".format(i+1, game_history[i][2]))
         else:
-            print("on your {}th attempt you guessed {} with {} lives remaining".format(i+1, game_history[i][2], game_history[i][1]))
+            print("On attempt {} you guessed {} with {} lives remaining".format(i+1, game_history[i][2], game_history[i][1]))
         
 def check_complete():
     global lives, word_completed, gen_word
